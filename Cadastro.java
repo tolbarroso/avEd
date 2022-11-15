@@ -1,4 +1,4 @@
-public class Cadastro<T extends Comparable<T>> {
+public class Cadastro<T extends Comparable<T>> extends LDECircular {
     private LDENode<T> prim;
     private LDENode<T> ult;
     private int qtd;
