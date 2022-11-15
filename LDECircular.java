@@ -53,19 +53,16 @@ public class LDECircular<T extends Comparable<T>> {
     }
 
     public LDENode<T> buscar2(Aluno al) {
-        LDENode<T> aux;
+        LDENode<T> aux = this.prim;
         if (this.isEmpty() == true) {
             return null;
-        } else {
-            aux = this.prim;
-            while (aux != null) {
-                if (aux.getInfo().compareTo(al) == 0) {
-                    return aux;
-                } else {
-                    aux = aux.getProx();
-                }
+        } if (al.compareTo(this.ult.getInfo()) == 0) {
+            return this.ult;
+        } for (int i = 0; i < this.qtd; i++) {
+            if (al.compareTo(aux.getInfo()) == 0) {
+                return aux;
             }
-            return null;
+            aux = aux.getProx();
         }
     }
 
