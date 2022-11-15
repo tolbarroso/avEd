@@ -10,7 +10,8 @@ public class Menu {
         int op;
         int val, falta;
         double media;
-        String matr, nome;
+        int matr = 0;
+        String nome;
 
         do {
             exibeMenuTurmas();

@@ -25,22 +25,67 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println(" ");
     }
 
-    public void inserirNovaMedia(String nome, String matr, double media) {
-        Aluno aluno = new Aluno(matr, nome);
+    public LDENode<T> buscar(T valor) { // busca simples
+        LDENode<T> aux = this.prim;
         if (this.isEmpty() == true) {
-            System.out.println("Aluno inválido!");
-        } else if (matr != null) {
-            aluno.setMedia(media);
+            return null;
         }
-        System.out.println(aluno.getMedia());
+        if (valor.compareTo(this.ult.getInfo()) == 0) {
+            return this.ult;
+        }
+        for (int i = 0; i < this.qtd; i++) {
+            if (valor.compareTo(aux.getInfo()) == 0) {
+                return aux;
+            }
+            aux = aux.getProx();
+        }
+        return null;
     }
 
-    public void inserirNovasFaltas(Aluno al, int faltas) {
+    public LDENode<T> buscar2(Aluno al) {
+        LDENode<T> aux;
         if (this.isEmpty() == true) {
-            System.out.println("Aluno inválido!");
-        } else if (al.getMatr() != null) {
-            al.setFaltas(faltas);
+            return null;
+        } else {
+            aux = this.prim;
+            while (aux != null) {
+                if (aux.getInfo().compareTo(al) == 0) {
+                    return aux;
+                } else {
+                    aux = aux.getProx();
+                }
+            }
+            return null;
         }
-        System.out.println(al.getFaltas());
+    }
+
+    public void inserirMedia(Aluno al, double media) {
+        LDENode<T> retorno = this.buscar2(al);
+        if (retorno == null) {
+            System.out.println("Aluno inválido!");
+        } else {
+            al.setMedia(media);
+        }
+        System.out.println("média atualizada para: " + al.getMedia());
+    }
+
+    public void adicionarFalta(Aluno al, int faltasNovas){
+        LDENode<T> retorno = this.buscar2(al);
+        if (retorno == null) {
+            System.out.println("aluno não encontrado!");
+        } else {
+            al.setFaltas(al.getFaltas() + faltasNovas);
+        }
+        System.out.println("faltas atualizada para: " + al.getFaltas());
+    }
+
+    public void retirarFalta(Aluno al, int faltasRemovidas){
+        LDENode<T> retorno = this.buscar2(al);
+        if (retorno == null) {
+            System.out.println("aluno não encontrado!");
+        } else {
+            al.setFaltas(al.getFaltas() - faltasRemovidas);
+        }
+        System.out.println("faltas atualizada para: " + al.getFaltas());
     }
 }
