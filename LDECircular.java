@@ -25,6 +25,16 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println(" ");
     }
 
+    public void exibirEspecifico(Aluno al) {
+        LDENode<T> retorno = this.buscar2(al);
+        if (retorno != null) {
+            System.out.println("lista vazia!");
+        } else {
+            System.out.println("matrícula: " + al.getMatr() + " nome: " + al.getNome() + " média: " + al.getMedia() + " faltas: " + al.getFaltas());
+        }
+
+    }
+
     public LDENode<T> buscar(T valor) { // busca simples
         LDENode<T> aux = this.prim;
         if (this.isEmpty() == true) {
