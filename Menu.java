@@ -3,11 +3,10 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        // LDECircular turmaA = new LDECircular();
-        LDECircular turmaB = new LDECircular();
-        LDECircular turmaC = new LDECircular();
-        LDECircular turmaD = new LDECircular();
         Cadastro turmaA = new Cadastro();
+        Cadastro turmaB = new Cadastro();
+        Cadastro turmaC = new Cadastro();
+        Cadastro turmaD = new Cadastro();
         int op;
         int val, falta;
         double media;
@@ -161,8 +160,8 @@ public class Menu {
                                 break;
                             case 2: // remover
                                 System.out.println("Informe a matrícula do aluno a ser removido: ");
-                                matr = in.nextLine();
-                                turmaC.remover(matr);
+                                matrFantasia = in.nextInt();
+                                turmaC.remover(matrFantasia);
                                 break;
                             case 3: // adicionar média
                                 System.out.println("Informa a matrícula do aluno: ");
