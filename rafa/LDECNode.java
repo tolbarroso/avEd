@@ -32,3 +32,4 @@ public class LDECNode<T extends Comparable<T>> {
     public void setProx(LDECNode<T> novoProx) {
         this.prox = novoProx;
     }
+}

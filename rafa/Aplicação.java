@@ -5,73 +5,181 @@ import java.util.Scanner;
 public class Aplicação {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
         LDECircular lista1 = new LDECircular();
         LDECircular lista2 = new LDECircular();
         LDECircular lista3 = new LDECircular();
         LDECircular lista4 = new LDECircular();
-        int op;
+
+        int op, op2;
         int val;
         String matricula;
         String nome;
         int faltas;
         double media;
-        do {
+        int cont = 0, cont2 = 0;
+
+        while (cont != 20) {
+            cont++;
+
             exibeMenu();
             op = in.nextInt();
             in.nextLine();
-            switch (op) {
-                case 1: // inserir primeiro
-                    System.out.print("Informe o valor a ser inserido: ");
-                    val = in.nextInt();
-                    lista.inserirNoInicio(val);
-                    break;
-                case 2: // inserir último
-                    System.out.print("Informe o valor a ser inserido: ");
-                    val = in.nextInt();
-                    lista.inserirNoFinal(val);
-                    break;
-                case 3: // exibir todos
-                    lista.exibirTodos();
-                    break;
-                case 4: // exibir inverso
-                    lista.exibirInverso();
-                    break;
-                case 5: // remover valor especíico
-                    lista.exibirTodos();
-                    System.out.print("Informe o valor a ser removido: ");
-                    val = in.nextInt();
-                    lista.remover(val);
-                    break;
-                case 6: // remover primeiro
-                    System.out.print("Informe o valor a ser inserido: ");
-                    val = in.nextInt();
-                    lista.removerPrimeiro(val);
-                    break;
-                case 7: // remover último
-                    System.out.print("Informe o valor a ser inserido: ");
-                    val = in.nextInt();
-                    lista.removerUltimo(val);
-                    break;
-                case 0:
-                    System.out.println("Programa Encerrado!");
-                    break;
-                default:
-                    System.out.println("Opção inválida");
+
+            if (op == 1) {
+                while (cont2 != 20) {
+                    cont2++;
+
+                    exibeMenu2();
+                    op2 = in.nextInt();
+                    in.nextLine();
+
+                    if (op2 == 1) { // cadastro
+                        break;
+                    } else if (op2 == 2) { // remoção
+                        break;
+                    } else if (op2 == 3) { // alteração da média
+                        break;
+                    } else if (op2 == 4) { // adição de matrícula
+                        break;
+                    } else if (op2 == 5) { // remoção de matrícula
+                        break;
+                    } else if (op2 == 6) { // exibição de todos
+                        break;
+                    } else if (op2 == 7) { // exibição de um
+                        break;
+                    } else if (op2 == 0) {
+                        cont2 = 20;
+                        System.out.println("programa encerrado");
+                    } else {
+                        System.out.println("opção invalida");
+                        break;
+                    }
+                }
+                break;
+            } else if (op == 2) {
+                while (cont2 != 20) {
+                    cont2++;
+
+                    exibeMenu2();
+                    op2 = in.nextInt();
+                    in.nextLine();
+
+                    if (op2 == 1) { // cadastro
+                        break;
+                    } else if (op2 == 2) { // remoção
+                        break;
+                    } else if (op2 == 3) { // alteração da média
+                        break;
+                    } else if (op2 == 4) { // adição de matrícula
+                        break;
+                    } else if (op2 == 5) { // remoção de matrícula
+                        break;
+                    } else if (op2 == 6) { // exibição de todos
+                        break;
+                    } else if (op2 == 7) { // exibição de um
+                        break;
+                    } else if (op2 == 0) {
+                        cont2 = 20;
+                        System.out.println("programa encerrado");
+                    } else {
+                        System.out.println("opção invalida");
+                        break;
+                    }
+                }
+                break;
+            } else if (op == 3) {
+                while (cont2 != 20) {
+                    cont2++;
+
+                    exibeMenu2();
+                    op2 = in.nextInt();
+                    in.nextLine();
+
+                    if (op2 == 1) { // cadastro
+                        break;
+                    } else if (op2 == 2) { // remoção
+                        break;
+                    } else if (op2 == 3) { // alteração da média
+                        break;
+                    } else if (op2 == 4) { // adição de matrícula
+                        break;
+                    } else if (op2 == 5) { // remoção de matrícula
+                        break;
+                    } else if (op2 == 6) { // exibição de todos
+                        break;
+                    } else if (op2 == 7) { // exibição de um
+                        break;
+                    } else if (op2 == 0) {
+                        cont2 = 20;
+                        System.out.println("programa encerrado");
+                    } else {
+                        System.out.println("opção invalida");
+                        break;
+                    }
+                }
+                break;
+            } else if (op == 4) {
+                while (cont2 != 20) {
+                    cont2++;
+
+                    exibeMenu2();
+                    op2 = in.nextInt();
+                    in.nextLine();
+
+                    if (op2 == 1) { // cadastro
+                        break;
+                    } else if (op2 == 2) { // remoção
+                        break;
+                    } else if (op2 == 3) { // alteração da média
+                        break;
+                    } else if (op2 == 4) { // adição de matrícula
+                        break;
+                    } else if (op2 == 5) { // remoção de matrícula
+                        break;
+                    } else if (op2 == 6) { // exibição de todos
+                        break;
+                    } else if (op2 == 7) { // exibição de um
+                        break;
+                    } else if (op2 == 0) {
+                        cont2 = 20;
+                        System.out.println("programa encerrado");
+                    } else {
+                        System.out.println("opção invalida");
+                        break;
+                    }
+                }
+                break;
+            } else if (op == 0) {
+                cont = 20;
+                System.out.println("programa encerrado");
+            } else {
+                System.out.println("opção invalida");
+                break;
             }
-        } while (op != 0);
+        }
     }
 
     public static void exibeMenu() {
         System.out.println("Opções");
-        System.out.println("1 - Inserir valor no início");
-        System.out.println("2 - Inserir valor no final");
-        System.out.println("3 - Exibir todos os valores");
-        System.out.println("4 - Exibir todos os valores inversamente");
-        System.out.println("5 - Remover valor específico da lista");
-        System.out.println("6 - Remover o primeiro valor");
-        System.out.println("7 - Remover o último valor");
+        System.out.println("1 - Lista 1");
+        System.out.println("2 - Lista 2");
+        System.out.println("3 - Lista 3");
+        System.out.println("4 - Lista 4");
+        System.out.println("0 - Encerrar programa");
+        System.out.print("Digite a opção desejada: ");
+    }
+
+    public static void exibeMenu2() {
+        System.out.println("Opções");
+        System.out.println("1 - Cadastrar");
+        System.out.println("2 - Remover");
+        System.out.println("3 - Alterar média");
+        System.out.println("4 - Adicionar faltas");
+        System.out.println("5 - Remover faltas");
+        System.out.println("6 - Exibir todos");
+        System.out.println("7 - Exibir especifico");
         System.out.println("0 - Encerrar programa");
         System.out.print("Digite a opção desejada: ");
     }
 }
-
