@@ -5,7 +5,7 @@ public class LDECircular<T extends Comparable<T>> {
     private LDECNode<T> ult;
     private int qtd;
 
-    public boolean isEmpty() {
+    public boolean isEmpty() { // verificar lista vazia
         if (this.qtd == 0) {
             return true;
         } else {
@@ -13,7 +13,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void cadastrarAluno(T valor) {
+    public void cadastrarAluno(T valor) { // cadastrar um novo nó
         LDECNode<T> novo = new LDECNode(valor);
         if (this.isEmpty() == true) {
             this.prim = novo;
@@ -31,7 +31,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void exibirTodos() {
+    public void exibirTodos() { // ver todos os nós
         LDECNode<T> aux;
         if (this.isEmpty() == true) {
             System.out.println("Lista Vazia!");
@@ -45,7 +45,7 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println(" ");
     }
 
-    public void exibirEspecifico(T valor) {
+    public void exibirEspecifico(T valor) { // ver um nó especifico
         LDECNode<T> retorno = this.buscar(valor);
         if (retorno != null) {
             System.out.println("lista vazia!");
@@ -71,7 +71,7 @@ public class LDECircular<T extends Comparable<T>> {
         return null;
     }
 
-    public void removerAluno (T valor) {
+    public void removerAluno (T valor) { // remover um nó
         LDECNode<T> aux, anterior, proximo;
         if (this.isEmpty() == true) { // Caso 1: lista vazia!
             System.out.println("lista vazia");
@@ -102,15 +102,39 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void alterarMedia(T valor, double media) {
-
+    public void alterarMedia(T valor, double media) { // alterar atributo
+        LDECNode<T> retorno = this.buscar(valor);
+        if (retorno == null) {
+            System.out.println("aluno não encontrado!");
+        } else {
+            valor.setMedia(media);
+        }
+        System.out.println("média atualizada para: " + valor.getMedia());
     }
 
-    public void adicionarFalta(T valor, int falta) {
-
+    public void adicionarFalta(T valor, int faltas) { // adicionar ao atributo
+        Aluno aluno;
+        aluno = valor;
+        LDECNode<T> retorno = this.buscar(valor);
+        if (retorno == null) {
+            System.out.println("aluno não encontrado!");
+        } else {
+            valor.setFaltas(valor.getFaltas() + faltas);
+        }
+        System.out.println("faltas atualizada para: " + valor.getFaltas());
     }
 
-    public void removerFalta(T valor, int falta) {
-
+    public void removerFalta(T valor, int faltas) { // remover do atributo
+        LDECNode<T> retorno = this.buscar(al);
+        if (retorno == null) {
+            System.out.println("aluno não encontrado!");
+        } else {
+            if (al.getFaltas() >= faltas) {
+                al.setFaltas(al.getFaltas() - faltas);
+                System.out.println("faltas atualizada para: " + al.getFaltas());
+            } else {
+                System.out.println("remoção não efetuada");
+            }
+        }
     }
 }
