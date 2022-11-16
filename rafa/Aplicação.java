@@ -100,18 +100,52 @@ public class Aplicação {
                     in.nextLine();
 
                     if (op2 == 1) { // cadastro
+                        System.out.println("insira o nome do novo aluno: ");
+                        nome = in.nextLine();
+                        System.out.println("insira sua matrícula: ");
+                        matricula = in.nextLine();
+                        Aluno aluno = new Aluno(matricula, nome);
+                        lista2.cadastrarAluno(aluno);
                         break;
                     } else if (op2 == 2) { // remoção
+                        System.out.println("insira a matrícula do aluno a ser removido: ");
+                        matricula = in.nextLine();
+                        Aluno aluno = new Aluno(matricula);
+                        lista2.removerAluno(aluno);
                         break;
                     } else if (op2 == 3) { // alteração da média
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a nova média: ");
+                        media = in.nextDouble();
+                        Aluno aluno;
+                        lista2.alterarMedia(matricula, media);
                         break;
-                    } else if (op2 == 4) { // adição de matrícula
+                    } else if (op2 == 4) { // adição de falta
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a quantidade de faltas a serem adicionadas: ");
+                        faltas = in.nextInt();
+                        Aluno aluno;
+                        lista2.adicionarFalta(matricula, faltas);
                         break;
-                    } else if (op2 == 5) { // remoção de matrícula
+                    } else if (op2 == 5) { // remoção de falta
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a quantidade de faltas a serem removidas: ");
+                        faltas = in.nextInt();
+                        Aluno aluno;
+                        lista2.removerFalta(matricula, faltas);
                         break;
                     } else if (op2 == 6) { // exibição de todos
+                        System.out.println("alunos: ");
+                        lista2.exibirTodos();
                         break;
                     } else if (op2 == 7) { // exibição de um
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        Aluno aluno;
+                        lista2.exibirEspecifico(matricula);
                         break;
                     } else if (op2 == 0) {
                         cont2 = 20;
@@ -131,18 +165,52 @@ public class Aplicação {
                     in.nextLine();
 
                     if (op2 == 1) { // cadastro
+                        System.out.println("insira o nome do novo aluno: ");
+                        nome = in.nextLine();
+                        System.out.println("insira sua matrícula: ");
+                        matricula = in.nextLine();
+                        Aluno aluno = new Aluno(matricula, nome);
+                        lista3.cadastrarAluno(aluno);
                         break;
                     } else if (op2 == 2) { // remoção
+                        System.out.println("insira a matrícula do aluno a ser removido: ");
+                        matricula = in.nextLine();
+                        Aluno aluno = new Aluno(matricula);
+                        lista3.removerAluno(aluno);
                         break;
                     } else if (op2 == 3) { // alteração da média
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a nova média: ");
+                        media = in.nextDouble();
+                        Aluno aluno;
+                        lista3.alterarMedia(matricula, media);
                         break;
-                    } else if (op2 == 4) { // adição de matrícula
+                    } else if (op2 == 4) { // adição de falta
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a quantidade de faltas a serem adicionadas: ");
+                        faltas = in.nextInt();
+                        Aluno aluno;
+                        lista3.adicionarFalta(matricula, faltas);
                         break;
-                    } else if (op2 == 5) { // remoção de matrícula
+                    } else if (op2 == 5) { // remoção de falta
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a quantidade de faltas a serem removidas: ");
+                        faltas = in.nextInt();
+                        Aluno aluno;
+                        lista3.removerFalta(matricula, faltas);
                         break;
                     } else if (op2 == 6) { // exibição de todos
+                        System.out.println("alunos: ");
+                        lista3.exibirTodos();
                         break;
                     } else if (op2 == 7) { // exibição de um
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        Aluno aluno;
+                        lista3.exibirEspecifico(matricula);
                         break;
                     } else if (op2 == 0) {
                         cont2 = 20;
@@ -162,18 +230,52 @@ public class Aplicação {
                     in.nextLine();
 
                     if (op2 == 1) { // cadastro
+                        System.out.println("insira o nome do novo aluno: ");
+                        nome = in.nextLine();
+                        System.out.println("insira sua matrícula: ");
+                        matricula = in.nextLine();
+                        Aluno aluno = new Aluno(matricula, nome);
+                        lista4.cadastrarAluno(aluno);
                         break;
                     } else if (op2 == 2) { // remoção
+                        System.out.println("insira a matrícula do aluno a ser removido: ");
+                        matricula = in.nextLine();
+                        Aluno aluno = new Aluno(matricula);
+                        lista4.removerAluno(aluno);
                         break;
                     } else if (op2 == 3) { // alteração da média
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a nova média: ");
+                        media = in.nextDouble();
+                        Aluno aluno;
+                        lista4.alterarMedia(matricula, media);
                         break;
-                    } else if (op2 == 4) { // adição de matrícula
+                    } else if (op2 == 4) { // adição de falta
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a quantidade de faltas a serem adicionadas: ");
+                        faltas = in.nextInt();
+                        Aluno aluno;
+                        lista4.adicionarFalta(matricula, faltas);
                         break;
-                    } else if (op2 == 5) { // remoção de matrícula
+                    } else if (op2 == 5) { // remoção de falta
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        System.out.println("insira a quantidade de faltas a serem removidas: ");
+                        faltas = in.nextInt();
+                        Aluno aluno;
+                        lista4.removerFalta(matricula, faltas);
                         break;
                     } else if (op2 == 6) { // exibição de todos
+                        System.out.println("alunos: ");
+                        lista4.exibirTodos();
                         break;
                     } else if (op2 == 7) { // exibição de um
+                        System.out.println("insira a matrícula do aluno: ");
+                        matricula = in.nextLine();
+                        Aluno aluno;
+                        lista4.exibirEspecifico(matricula);
                         break;
                     } else if (op2 == 0) {
                         cont2 = 20;

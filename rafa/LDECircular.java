@@ -45,8 +45,13 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println(" ");
     }
 
-    public void exibirEspecifico() {
-        
+    public void exibirEspecifico(T valor) {
+        LDECNode<T> retorno = this.buscar(valor);
+        if (retorno != null) {
+            System.out.println("lista vazia!");
+        } else {
+            valor.toString();
+        }
     }
 
     public LDECNode<T> buscar(T valor) { // busca simples
