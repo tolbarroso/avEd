@@ -1,3 +1,5 @@
+package carol;
+
 public class LDECircular<T extends Comparable<T>> {
     private LDENode<T> prim;
     private LDENode<T> ult;

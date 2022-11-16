@@ -1,3 +1,5 @@
+package carol;
+
 public class Aluno implements Comparable<Aluno> {
     // Atributos
     private String matr;

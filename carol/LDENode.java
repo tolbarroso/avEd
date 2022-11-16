@@ -1,3 +1,5 @@
+package carol;
+
 public class LDENode<T extends Comparable<T>> {
     // Atributos
     private T info;

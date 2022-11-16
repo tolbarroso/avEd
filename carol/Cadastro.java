@@ -1,3 +1,5 @@
+package carol;
+
 public class Cadastro<T extends Comparable<T>> extends LDECircular {
     private LDENode<T> prim;
     private LDENode<T> ult;
@@ -53,6 +55,20 @@ public class Cadastro<T extends Comparable<T>> extends LDECircular {
             anterior.setProx(proximo);
             proximo.setAnt(anterior);
             this.qtd--;
+        }
+    }
+
+    public LDENode<T> buscar(Aluno al) {
+        LDENode<T> aux = this.prim;
+        if (this.isEmpty() == true) {
+            return null;
+        } if (al.compareTo(this.ult.getInfo()) == 0) {
+            return this.ult;
+        } for (int i = 0; i < this.qtd; i++) {
+            if (al.compareTo(aux.getInfo()) == 0) {
+                return aux;
+            }
+            aux = aux.getProx();
         }
     }
 }
