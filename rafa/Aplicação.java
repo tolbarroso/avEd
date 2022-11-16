@@ -35,6 +35,11 @@ public class Aplicação {
                     in.nextLine();
 
                     if (op2 == 1) { // cadastro
+                        System.out.println("Insira o nome do novo aluno: ");
+                        nome = in.nextLine();
+                        System.out.println("Insira sua matrícula: ");
+                        matricula = in.nextLine();
+                        Aluno aluno = new Aluno(matricula, nome);
                         break;
                     } else if (op2 == 2) { // remoção
                         break;
