@@ -1,3 +1,5 @@
+package rafa;
+
 import java.util.Scanner;
 
 public class Aplicação {
