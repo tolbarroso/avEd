@@ -45,6 +45,10 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println(" ");
     }
 
+    public void exibirEspecifico() {
+        
+    }
+
     public LDECNode<T> buscar(T valor) { // busca simples
         LDECNode<T> aux = this.prim;
         if (this.isEmpty() == true) {
@@ -91,5 +95,17 @@ public class LDECircular<T extends Comparable<T>> {
                 System.out.println("aluno não encontrado");
             }
         }
+    }
+
+    public void alterarMedia(T valor, double media) {
+
+    }
+
+    public void adicionarFalta(T valor, int falta) {
+
+    }
+
+    public void removerFalta(T valor, int falta) {
+
     }
 }
