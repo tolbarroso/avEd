@@ -6,12 +6,10 @@ public class Aplicacao {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        //LDECircular lista1 = new LDECircular();
-        LDECircular lista2 = new LDECircular();
-        LDECircular lista3 = new LDECircular();
-        LDECircular lista4 = new LDECircular();
-
         Cadastro lista1 = new Cadastro();
+        Cadastro lista2 = new Cadastro();
+        Cadastro lista3 = new Cadastro();
+        Cadastro lista4 = new Cadastro();
 
         int op, op2;
         String matricula;
@@ -37,40 +35,40 @@ public class Aplicacao {
                     in.nextLine();
 
                     if (op2 == 1) { // cadastro
-                        System.out.println("insira o nome do novo aluno: ");
+                        System.out.print("insira o nome do novo aluno: ");
                         nome = in.nextLine();
-                        System.out.println("insira sua matrícula: ");
+                        System.out.print("insira sua matrícula: ");
                         matricula = in.nextLine();
                         aluno = new Aluno(matricula, nome);
                         lista1.cadastrarAluno(aluno);
                     } else if (op2 == 2) { // remoção
-                        System.out.println("insira a matrícula do aluno a ser removido: ");
+                        System.out.print("insira a matrícula do aluno a ser removido: ");
                         matricula = in.nextLine();
                         aluno = new Aluno(matricula);
                         lista1.removerAluno(aluno);
                     } else if (op2 == 3) { // alteração da média
-                        System.out.println("insira a matrícula do aluno: ");
+                        System.out.print("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
-                        System.out.println("insira a nova média: ");
+                        System.out.print("insira a nova média: ");
                         media = in.nextDouble();
                         lista1.alterarMedia(matricula, media);
                     } else if (op2 == 4) { // adição de falta
-                        System.out.println("insira a matrícula do aluno: ");
+                        System.out.print("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
-                        System.out.println("insira a quantidade de faltas a serem adicionadas: ");
+                        System.out.print("insira a quantidade de faltas a serem adicionadas: ");
                         faltas = in.nextInt();
                         lista1.adicionarFalta(matricula, faltas);
                     } else if (op2 == 5) { // remoção de falta
-                        System.out.println("insira a matrícula do aluno: ");
+                        System.out.print("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
-                        System.out.println("insira a quantidade de faltas a serem removidas: ");
+                        System.out.print("insira a quantidade de faltas a serem removidas: ");
                         faltas = in.nextInt();
                         lista1.removerFalta(matricula, faltas);
                     } else if (op2 == 6) { // exibição de todos
                         System.out.println("alunos: ");
                         lista1.exibirTodos();
                     } else if (op2 == 7) { // exibição de um
-                        System.out.println("insira a matrícula do aluno: ");
+                        System.out.print("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
                         aluno = new Aluno(matricula);
                         lista1.exibirEspecifico(matricula);
