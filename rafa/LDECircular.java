@@ -51,7 +51,7 @@ public class LDECircular<T extends Comparable<T>> {
         System.out.println(" ");
     }
 
-    public void exibirEspecifico(T valor) { // ver um nó especifico
+    public void exibirEspecifico(Object valor) { // ver um nó especifico
         LDECNode<T> retorno = this.buscar(valor);
         if (retorno != null) {
             System.out.println("lista vazia!");
@@ -60,16 +60,16 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public LDECNode<T> buscar(T valor) { // busca simples
+    public LDECNode<T> buscar(Object valor) { // busca simples
         LDECNode<T> aux = this.prim;
         if (this.isEmpty() == true) {
             return null;
         }
-        if (valor.compareTo(this.ult.getInfo()) == 0) {
+        if (((Comparable<T>) valor).compareTo(this.ult.getInfo()) == 0) {
             return this.ult;
         }
         for (int i = 0; i < this.qtd; i++) {
-            if (valor.compareTo(aux.getInfo()) == 0) {
+            if (((Comparable<T>) valor).compareTo(aux.getInfo()) == 0) {
                 return aux;
             }
             aux = aux.getProx();
@@ -108,36 +108,34 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }*/
 
-    public void alterarMedia(T valor, double media) { // alterar atributo
+    public void alterarMedia(Object valor, double media) { // alterar atributo
         LDECNode<T> retorno = this.buscar(valor);
         if (retorno == null) {
             System.out.println("aluno não encontrado!");
         } else {
-            valor.setMedia(media);
+            ((Aluno) valor).setMedia(media);
         }
-        System.out.println("média atualizada para: " + valor.getMedia());
+        System.out.println("média atualizada para: " + ((Aluno) valor).getMedia());
     }
 
-    public void adicionarFalta(T valor, int faltas) { // adicionar ao atributo
-        Aluno aluno;
-        aluno = valor;
+    public void adicionarFalta(Object valor, int faltas) { // adicionar ao atributo
         LDECNode<T> retorno = this.buscar(valor);
         if (retorno == null) {
             System.out.println("aluno não encontrado!");
         } else {
-            valor.setFaltas(valor.getFaltas() + faltas);
+            ((Aluno) valor).setFaltas(((Aluno) valor).getFaltas() + faltas);
         }
-        System.out.println("faltas atualizada para: " + valor.getFaltas());
+        System.out.println("faltas atualizada para: " + ((Aluno) valor).getFaltas());
     }
 
-    public void removerFalta(T valor, int faltas) { // remover do atributo
-        LDECNode<T> retorno = this.buscar(al);
+    public void removerFalta(Object valor, int faltas) { // remover do atributo
+        LDECNode<T> retorno = this.buscar(valor);
         if (retorno == null) {
             System.out.println("aluno não encontrado!");
         } else {
-            if (al.getFaltas() >= faltas) {
-                al.setFaltas(al.getFaltas() - faltas);
-                System.out.println("faltas atualizada para: " + al.getFaltas());
+            if (((Aluno) valor).getFaltas() >= faltas) {
+                ((Aluno) valor).setFaltas(((Aluno) valor).getFaltas() - faltas);
+                System.out.println("faltas atualizada para: " + ((Aluno) valor).getFaltas());
             } else {
                 System.out.println("remoção não efetuada");
             }
