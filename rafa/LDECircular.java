@@ -65,9 +65,6 @@ public class LDECircular<T extends Comparable<T>> {
         if (this.isEmpty() == true) {
             return null;
         }
-        if (((Comparable<T>) valor).compareTo(this.ult.getInfo()) == 0) {
-            return this.ult;
-        }
         for (int i = 0; i < this.qtd; i++) {
             if (((Comparable<T>) valor).compareTo(aux.getInfo()) == 0) {
                 return aux;
