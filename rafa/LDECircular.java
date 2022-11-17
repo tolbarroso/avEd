@@ -13,8 +13,9 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void cadastrarAluno(T valor) { // cadastrar um novo nó
+    public void cadastrarAluno(T valor) {
         LDECNode<T> novo = new LDECNode(valor);
+        LDECNode<T> aux;
         if (this.isEmpty() == true) {
             this.prim = novo;
             this.ult = novo;
@@ -22,12 +23,17 @@ public class LDECircular<T extends Comparable<T>> {
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
         } else {
-            novo.setAnt(this.ult);
-            this.ult.setProx(novo);
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
+            aux = this.buscar(valor);
+            if (aux == null) { // verifica repetição
+                System.out.println("valor repetido. inserção não efetuada.");
+            } else {
+                novo.setAnt(this.ult);
+                this.ult.setProx(novo);
+                this.ult = novo;
+                this.qtd++;
+                this.prim.setAnt(this.ult);
+                this.ult.setProx(this.prim);
+            }
         }
     }
 

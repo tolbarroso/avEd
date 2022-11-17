@@ -32,6 +32,7 @@ public class Cadastro<T extends Comparable<T>> {
 
     public void cadastrarAluno(T valor) {
         LDECNode<T> novo = new LDECNode(valor);
+        LDECNode<T> aux;
         if (this.isEmpty() == true) {
             this.prim = novo;
             this.ult = novo;
@@ -39,16 +40,21 @@ public class Cadastro<T extends Comparable<T>> {
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
         } else {
-            novo.setAnt(this.ult);
-            this.ult.setProx(novo);
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
+            aux = this.buscar(valor);
+            if (aux == null) { // verifica repetição
+                System.out.println("valor repetido. inserção não efetuada.");
+            } else {
+                novo.setAnt(this.ult);
+                this.ult.setProx(novo);
+                this.ult = novo;
+                this.qtd++;
+                this.prim.setAnt(this.ult);
+                this.ult.setProx(this.prim);
+            }
         }
     }
 
-    public void removerAluno (T valor) {
+    public void removerAluno(T valor) {
         LDECNode<T> aux, anterior, proximo;
         if (this.isEmpty() == true) { // Caso 1: lista vazia!
             System.out.println("lista vazia");

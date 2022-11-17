@@ -12,11 +12,11 @@ public class Aplicacao {
         LDECircular lista4 = new LDECircular();
 
         int op, op2;
-        int val;
         String matricula;
         String nome;
         int faltas;
         double media;
+        Aluno aluno;
         int cont = 0, cont2 = 0;
 
         while (cont != 20) {
@@ -39,33 +39,30 @@ public class Aplicacao {
                         nome = in.nextLine();
                         System.out.println("insira sua matrícula: ");
                         matricula = in.nextLine();
-                        Aluno aluno = new Aluno(matricula, nome);
+                        aluno = new Aluno(matricula, nome);
                         lista1.cadastrarAluno(aluno);
                     } else if (op2 == 2) { // remoção
                         System.out.println("insira a matrícula do aluno a ser removido: ");
                         matricula = in.nextLine();
-                        Aluno aluno = new Aluno(matricula);
+                        aluno = new Aluno(matricula);
                         lista1.removerAluno(aluno);
                     } else if (op2 == 3) { // alteração da média
                         System.out.println("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
                         System.out.println("insira a nova média: ");
                         media = in.nextDouble();
-                        Aluno aluno;
                         lista1.alterarMedia(matricula, media);
                     } else if (op2 == 4) { // adição de falta
                         System.out.println("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
                         System.out.println("insira a quantidade de faltas a serem adicionadas: ");
                         faltas = in.nextInt();
-                        Aluno aluno;
                         lista1.adicionarFalta(matricula, faltas);
                     } else if (op2 == 5) { // remoção de falta
                         System.out.println("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
                         System.out.println("insira a quantidade de faltas a serem removidas: ");
                         faltas = in.nextInt();
-                        Aluno aluno;
                         lista1.removerFalta(matricula, faltas);
                     } else if (op2 == 6) { // exibição de todos
                         System.out.println("alunos: ");
@@ -73,7 +70,7 @@ public class Aplicacao {
                     } else if (op2 == 7) { // exibição de um
                         System.out.println("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
-                        Aluno aluno;
+                        aluno = new Aluno(matricula);
                         lista1.exibirEspecifico(matricula);
                     } else if (op2 == 0) {
                         cont2 = 20;
@@ -82,7 +79,7 @@ public class Aplicacao {
                         System.out.println("opção invalida");
                     }
                 }
-            } else if (op == 2) { // lista 2
+          /*  } else if (op == 2) { // lista 2
                 while (cont2 != 20) {
                     cont2++;
 
@@ -255,6 +252,7 @@ public class Aplicacao {
                 System.out.println("programa encerrado");
             } else {
                 System.out.println("opção invalida");
+        */
             }
         }
     }
