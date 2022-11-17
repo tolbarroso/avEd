@@ -1,6 +1,6 @@
 package rafa;
 
-public class Cadastro<T extends Comparable<T>> {
+public class Cadastro<T extends Comparable<T>> extends LDECircular {
     private LDECNode<T> prim;
     private LDECNode<T> ult;
     private int qtd;
@@ -13,7 +13,7 @@ public class Cadastro<T extends Comparable<T>> {
         }
     }
 
-    public LDECNode<T> buscar(T valor) { // busca simples
+    /*public LDECNode<T> buscar(T valor) { // busca simples
         LDECNode<T> aux = this.prim;
         if (this.isEmpty() == true) {
             return null;
@@ -28,7 +28,7 @@ public class Cadastro<T extends Comparable<T>> {
             aux = aux.getProx();
         }
         return null;
-    }
+    }*/
 
     public void cadastrarAluno(T valor) {
         LDECNode<T> novo = new LDECNode(valor);

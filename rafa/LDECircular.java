@@ -13,7 +13,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void cadastrarAluno(T valor) {
+    /*public void cadastrarAluno(T valor) {
         LDECNode<T> novo = new LDECNode(valor);
         LDECNode<T> aux;
         if (this.isEmpty() == true) {
@@ -35,7 +35,7 @@ public class LDECircular<T extends Comparable<T>> {
                 this.ult.setProx(this.prim);
             }
         }
-    }
+    }*/
 
     public void exibirTodos() { // ver todos os nós
         LDECNode<T> aux;
@@ -77,7 +77,7 @@ public class LDECircular<T extends Comparable<T>> {
         return null;
     }
 
-    public void removerAluno (T valor) { // remover um nó
+    /*public void removerAluno (T valor) { // remover um nó
         LDECNode<T> aux, anterior, proximo;
         if (this.isEmpty() == true) { // Caso 1: lista vazia!
             System.out.println("lista vazia");
@@ -106,7 +106,7 @@ public class LDECircular<T extends Comparable<T>> {
                 System.out.println("aluno não encontrado");
             }
         }
-    }
+    }*/
 
     public void alterarMedia(T valor, double media) { // alterar atributo
         LDECNode<T> retorno = this.buscar(valor);

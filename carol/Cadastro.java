@@ -58,17 +58,20 @@ public class Cadastro<T extends Comparable<T>> extends LDECircular {
         }
     }
 
-    public LDENode<T> buscar(Aluno al) {
+    public LDENode<T> buscar(T valor) { // busca simples
         LDENode<T> aux = this.prim;
         if (this.isEmpty() == true) {
             return null;
-        } if (al.compareTo(this.ult.getInfo()) == 0) {
+        }
+        if (valor.compareTo(this.ult.getInfo()) == 0) {
             return this.ult;
-        } for (int i = 0; i < this.qtd; i++) {
-            if (al.compareTo(aux.getInfo()) == 0) {
+        }
+        for (int i = 0; i < this.qtd; i++) {
+            if (valor.compareTo(aux.getInfo()) == 0) {
                 return aux;
             }
             aux = aux.getProx();
         }
+        return null;
     }
 }

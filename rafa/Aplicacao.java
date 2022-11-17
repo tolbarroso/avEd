@@ -6,10 +6,12 @@ public class Aplicacao {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        LDECircular lista1 = new LDECircular();
+        //LDECircular lista1 = new LDECircular();
         LDECircular lista2 = new LDECircular();
         LDECircular lista3 = new LDECircular();
         LDECircular lista4 = new LDECircular();
+
+        Cadastro lista1 = new Cadastro();
 
         int op, op2;
         String matricula;
