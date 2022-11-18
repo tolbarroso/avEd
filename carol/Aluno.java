@@ -58,14 +58,14 @@ public class Aluno implements Comparable<Aluno> {
     }
 
     // compare To
-    public int compareTo(Aluno al) {
-        int result;
-        result = this.getMatr().compareTo(al.getMatr());
-        return result;
+    public int compareTo(Aluno valor) {
+        int retorno;
+        retorno = this.getMatr().compareTo(valor.getMatr());
+        return retorno;
     }
 
     // to String
     public String toString() {
-        return "matrícula: " + this.matr + " nome: " + this.nome + " média: " + this.media + " faltas: " + this.faltas;
+        return "[matrícula: " + this.matr + " nome: " + this.nome + " média: " + this.media + " faltas: " + this.faltas + "]";
     }
 }

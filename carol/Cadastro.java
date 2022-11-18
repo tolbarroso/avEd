@@ -1,77 +1,63 @@
 package carol;
 
-public class Cadastro<T extends Comparable<T>> extends LDECircular {
-    private LDENode<T> prim;
-    private LDENode<T> ult;
-    private int qtd;
+public class Cadastro {
+    private LDECircular<Aluno> aluno;
 
-    public boolean isEmpty() {
-        if (this.qtd == 0) {
-            return true;
+    public Cadastro() {
+        aluno = new LDECircular<>();
+    }
+
+    public void cadastro(Aluno al) {
+        aluno.inserir(al);
+    }
+
+    public void excluir(String valor) {
+        Aluno alunoRemovido = new Aluno(valor);
+        aluno.remover(alunoRemovido);
+    }
+
+    public void exibirLista() {
+        aluno.exibirTodos();
+    }
+
+    public void exibirUm(String valor) {
+        Aluno alunoExibir = new Aluno(valor);
+        aluno.exibirEspecifico(alunoExibir);
+    }
+
+    public Aluno consultarAluno(String valor) {
+        Aluno aux = new Aluno(valor);
+        Aluno retorno = aluno.buscar(aux).getInfo();
+        return retorno;
+    }
+
+    public void alterarMedia(String valor, double novaMedia) {
+        Aluno aux = this.consultarAluno(valor);
+        if (aux != null) {
+            aux.setMedia(novaMedia);
+            System.out.println("sua média foi alterada!");
         } else {
-            return false;
+            System.out.println("aluno não encontrado!");
         }
     }
 
-    public void inserir(T valor) {
-        LDENode<T> novo = new LDENode(valor);
-        if (this.isEmpty() == true) {
-            this.prim = novo;
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
+    public void adicionarFalta(String valor, int novaFalta) {
+        Aluno aux = this.consultarAluno(valor);
+        if (aux != null) {
+            aux.setFaltas(aux.getFaltas() + novaFalta);
+            System.out.println("quant de faltas foi alterada!");
         } else {
-            novo.setAnt(this.ult);
-            this.ult.setProx(novo);
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
+            System.out.println("aluno não encontrado!");
         }
     }
 
-    public void remover (T valor) { // Remove um valor específico
-        LDENode<T> retorno = this.buscar(valor);
-        LDENode<T> anterior, proximo;
-        if (retorno == null) {
-            System.out.println("valor não encontrado!");
-        } else if (this.qtd == 1) {
-            this.prim = null;
-            this.qtd = 0;
-        } else if (retorno == this.prim) { // remove o primeiro
-            this.prim = this.prim.getProx();
-            this.qtd--;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
-        } else if (retorno == this.ult) { // remove o ultimo
-            this.ult = this.ult.getAnt();
-            this.qtd--;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
-        } else { // remove no "meio"
-            anterior = retorno.getAnt();
-            proximo = retorno.getProx();
-            anterior.setProx(proximo);
-            proximo.setAnt(anterior);
-            this.qtd--;
+    public void removerFalta(String valor, int novaFalta) {
+        Aluno aux = this.consultarAluno(valor);
+        if (aux != null) {
+            aux.setFaltas(aux.getFaltas() - novaFalta);
+            System.out.println("quant de faltas foi alterada!");
+        } else {
+            System.out.println("aluno não encontrado!");
         }
-    }
-
-    public LDENode<T> buscar(T valor) { // busca simples
-        LDENode<T> aux = this.prim;
-        if (this.isEmpty() == true) {
-            return null;
-        }
-        if (valor.compareTo(this.ult.getInfo()) == 0) {
-            return this.ult;
-        }
-        for (int i = 0; i < this.qtd; i++) {
-            if (valor.compareTo(aux.getInfo()) == 0) {
-                return aux;
-            }
-            aux = aux.getProx();
-        }
-        return null;
     }
 }
