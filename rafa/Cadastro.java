@@ -1,68 +1,51 @@
 package rafa;
 
-public class Cadastro extends LDECircular<Aluno> {
-    //private LDECircular<Aluno> cadastro;
+public class Cadastro {
+    private LDECircular<Aluno> novo;
 
-    private LDECNode<Aluno> prim;
-    private LDECNode<Aluno> ult;
-    private int qtd;
+    public Cadastro() {
+        novo = new LDECircular<>();
+    }
 
-    public boolean isEmpty() {
-        if (this.qtd == 0) {
-            return true;
+    public void cadastrarAluno(Aluno aluno) {
+        novo.inserir(aluno);
+    }
+
+    public void excluir(String valor) {
+        Aluno aluno = new Aluno(valor);
+        novo.remover(aluno);
+    }
+
+    public void exibirLista() {
+        novo.exibirTodos();
+    }
+
+    public void exibirUm(String valor) {
+        Aluno aluno = new Aluno(valor);
+        novo.exibirEspecifico(aluno);
+    }
+
+    public Aluno pesquisar(String valor) {
+        Aluno aux = new Aluno(valor);
+        Aluno retorno = novo.buscar(aux).getInfo();
+        return retorno;
+    }
+
+    public void alterarMedia(String valor, double media) {
+        Aluno aux = this.pesquisar(valor);
+        if (aux != null) {
+            aux.setMedia(media);
         } else {
-            return false;
+            System.out.println("aluno não encontrado!");
         }
     }
 
-    public void cadastrarAluno(Aluno al) {
-        LDECNode<Aluno> novo = new LDECNode(al);
-        if (this.isEmpty() == true) { // Lista vazia?
-            this.prim = novo;
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
-        } else if (al.compareTo(this.ult.getInfo()) > 0) { // Lista com mais de um nó. Insere depois do último
-            this.ult.setProx(novo);
-            novo.setAnt(this.ult);
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
-        } else if (al.compareTo(this.ult.getInfo()) == 0) { // Verifica repetição
-            System.out.println("Valor Repetido. Inserção não efetuada.");
-        }
-    }
-
-    public void removerAluno(Aluno al) {
-        LDECNode<Aluno> aux, anterior, proximo;
-        if (this.isEmpty() == true) { // Caso 1: lista vazia!
-            System.out.println("lista de alunos está vazia");
-        } else if (this.qtd == 1) { // Caso 2: lista com apenas um nó
-            if (al.compareTo(this.prim.getInfo()) == 0) {
-                this.prim = null;
-                this.ult = null;
-                this.qtd--;
-            } else {
-                System.out.println("aluno não encontrado");
-            }
-        } else { // Caso 3: caso geral (lista com mais de um nó)
-            aux = this.buscar(al);
-            if (aux != null) {
-                anterior = aux.getAnt();
-                proximo = aux.getProx();
-                anterior.setProx(proximo);
-                proximo.setAnt(anterior);
-                this.qtd--;
-                if (aux == this.prim) {
-                    this.prim = proximo;
-                } else if (aux == this.ult) {
-                    this.ult = anterior;
-                }
-            } else {
-                System.out.println("aluno não encontrado");
-            }
+    public void alterarFalta(String valor, int falta) {
+        Aluno aux = this.pesquisar(valor);
+        if (aux != null) {
+            aux.setFaltas(falta);
+        } else {
+            System.out.println("aluno não encontrado!");
         }
     }
 }

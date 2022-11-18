@@ -11,6 +11,10 @@ public class Aluno implements Comparable<Aluno> {
         this.nome = nome;
     }
 
+    public Aluno(String matricula) {
+        this.matricula = matricula;
+    }
+
     public String getMatricula() {
         return matricula;
     }
