@@ -11,7 +11,7 @@ public class Cadastro {
         novo.inserir(aluno);
     }
 
-    public void excluir(String valor) {
+    public void removerAluno(String valor) {
         Aluno aluno = new Aluno(valor);
         novo.remover(aluno);
     }
