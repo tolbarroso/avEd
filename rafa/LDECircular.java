@@ -5,7 +5,7 @@ public class LDECircular<T extends Comparable<T>> {
     private LDECNode<T> ult;
     private int qtd;
 
-    public boolean isEmpty() { // verificar lista vazia
+    public boolean isEmpty() {
         if (this.qtd == 0) {
             return true;
         } else {
@@ -13,40 +13,40 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void inserir(T valor) { // Insere um novo nó na lista
+    public void inserir(T valor) {
         LDECNode<T> novo = new LDECNode(valor);
         LDECNode<T> aux, anterior;
-        if (this.isEmpty() == true) { // Lista vazia?
+        if (this.isEmpty() == true) {
             this.prim = novo;
             this.ult = novo;
             this.qtd++;
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
-        } else if (valor.compareTo(this.prim.getInfo()) < 0) { // Insere antes do primeiro
+        } else if (valor.compareTo(this.prim.getInfo()) < 0) {
             novo.setProx(this.prim);
             this.prim.setAnt(novo);
             this.prim = novo;
             this.qtd++;
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
-        } else if (valor.compareTo(this.prim.getInfo()) == 0) { // Verifica repetição
+        } else if (valor.compareTo(this.prim.getInfo()) == 0) {
             System.out.println("Valor Repetido. Inserção não efetuada.");
-        } else if (valor.compareTo(this.ult.getInfo()) > 0) { // Insere depois do último
+        } else if (valor.compareTo(this.ult.getInfo()) > 0) {
             this.ult.setProx(novo);
             novo.setAnt(this.ult);
             this.ult = novo;
             this.qtd++;
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
-        } else if (valor.compareTo(this.ult.getInfo()) == 0) { // Verifica repetição
+        } else if (valor.compareTo(this.ult.getInfo()) == 0) {
             System.out.println("Valor Repetido. Inserção não efetuada.");
         } else { // Insere no meio
             aux = this.prim.getProx();
             while (true) {
-                if (valor.compareTo(aux.getInfo()) == 0) { // Verifica repetição
+                if (valor.compareTo(aux.getInfo()) == 0) {
                     System.out.println("Valor repetido. Inserção não efetuada.");
                     break;
-                } else if (valor.compareTo(aux.getInfo()) < 0) { // Insere no meio da lista
+                } else if (valor.compareTo(aux.getInfo()) < 0) {
                     anterior = aux.getAnt();
                     anterior.setProx(novo);
                     aux.setAnt(novo);
@@ -61,7 +61,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void exibirTodos() { // ver todos os nós
+    public void exibirTodos() {
         LDECNode<T> aux;
         if (this.isEmpty() == true) {
             System.out.println("lista vazia!");
@@ -74,7 +74,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void exibirEspecifico(T valor) { // ver um nó especifico
+    public void exibirEspecifico(T valor) {
         LDECNode<T> retorno = this.buscar(valor);
         if (retorno != null) {
             System.out.println(retorno.getInfo());
@@ -112,17 +112,17 @@ public class LDECircular<T extends Comparable<T>> {
             this.prim = null;
             this.ult = null;
             this.qtd = 0;
-        } else if (retorno == this.prim) { // remove o primeiro
+        } else if (retorno == this.prim) {
             this.prim = this.prim.getProx();
             this.qtd--;
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
-        } else if (retorno == this.ult) { // remove o ultimo
+        } else if (retorno == this.ult) {
             this.ult = this.ult.getAnt();
             this.qtd--;
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
-        } else { // remove no "meio"
+        } else {
             anterior = retorno.getAnt();
             proximo = retorno.getProx();
             anterior.setProx(proximo);
