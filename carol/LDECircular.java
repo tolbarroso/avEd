@@ -21,6 +21,8 @@ public class LDECircular<T extends Comparable<T>> {
             this.qtd++;
             this.prim.setAnt(this.ult);
             this.ult.setProx(this.prim);
+        } else if (valor.compareTo(novo.getInfo()) == 0) {
+            System.out.println("Valor repetido. Inserção não efetuada.");
         } else {
             novo.setAnt(this.ult);
             this.ult.setProx(novo);
@@ -50,12 +52,12 @@ public class LDECircular<T extends Comparable<T>> {
         if (retorno != null) {
             System.out.println(retorno.getInfo());
         } else {
-           System.out.println("aluno não encontrado!");
+            System.out.println("aluno não encontrado!");
         }
 
     }
 
-    public LDENode<T> buscar (T valor) { 
+    public LDENode<T> buscar(T valor) {
         LDENode<T> aux;
         if (this.isEmpty() == true) {
             return null;
@@ -78,7 +80,7 @@ public class LDECircular<T extends Comparable<T>> {
         return null;
     }
 
-    public void remover (T valor) {
+    public void remover(T valor) {
         LDENode<T> retorno = this.buscar(valor);
         LDENode<T> proximo, anterior;
         if (retorno == null) {
