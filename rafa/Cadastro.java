@@ -13,23 +13,6 @@ public class Cadastro<T extends Comparable<T>> extends LDECircular {
         }
     }
 
-    /*public LDECNode<T> buscar(T valor) { // busca simples
-        LDECNode<T> aux = this.prim;
-        if (this.isEmpty() == true) {
-            return null;
-        }
-        if (valor.compareTo(this.ult.getInfo()) == 0) {
-            return this.ult;
-        }
-        for (int i = 0; i < this.qtd; i++) {
-            if (valor.compareTo(aux.getInfo()) == 0) {
-                return aux;
-            }
-            aux = aux.getProx();
-        }
-        return null;
-    }*/
-
     public void cadastrarAluno(T valor) {
         LDECNode<T> novo = new LDECNode(valor);
         LDECNode<T> aux;

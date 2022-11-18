@@ -46,7 +46,7 @@ public class Menu {
                                 matr = in.nextLine();
                                 System.out.println("Informa a nova média: ");
                                 media = in.nextDouble();
-                                al =  new Aluno(matr);
+                                al = new Aluno(matr);
                                 turmaA.inserirMedia(al, media);
                                 break;
                             case 4: // adicionar falta
@@ -54,7 +54,7 @@ public class Menu {
                                 matr = in.nextLine();
                                 System.out.println("Informa quantas faltas serão adicionadas: ");
                                 falta = in.nextInt();
-                                al =  new Aluno(matr);
+                                al = new Aluno(matr);
                                 turmaA.adicionarFalta(al, falta);
                                 break;
                             case 5: // remover falta
@@ -62,7 +62,7 @@ public class Menu {
                                 matr = in.nextLine();
                                 System.out.println("Informa quantas faltas serão adicionadas: ");
                                 falta = in.nextInt();
-                                al =  new Aluno(matr);
+                                al = new Aluno(matr);
                                 turmaA.adicionarFalta(al, falta);
                                 break;
                             case 6: // exibir todos
@@ -89,59 +89,8 @@ public class Menu {
                         val = in.nextInt();
                         in.nextLine();
                         switch (val) {
-                            case 1: // cadastro
-                                matrFantasia++;
-                                System.out.println("Informe o nome do novo aluno: ");
-                                nome = in.nextLine();
-                                matr = "" + matrFantasia;
-                                al = new Aluno(matr, nome);
-                                turmaB.inserir(al);
-                                System.out.println("Sua matrícula será: " + matrFantasia);
-                                break;
-                            case 2: // remover
-                                System.out.println("Informe a matrícula do aluno a ser removido: ");
-                                matr = in.nextLine();
-                                turmaB.remover(matr);
-                                break;
-                            case 3: // adicionar média
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa a nova média: ");
-                                media = in.nextDouble();
-                                al =  new Aluno(matr);
-                                turmaB.inserirMedia(al, media);
-                                break;
-                            case 4: // adicionar falta
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa quantas faltas serão adicionadas: ");
-                                falta = in.nextInt();
-                                al =  new Aluno(matr);
-                                turmaB.adicionarFalta(al, falta);
-                                break;
-                            case 5: // remover falta
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa quantas faltas serão adicionadas: ");
-                                falta = in.nextInt();
-                                al =  new Aluno(matr);
-                                turmaB.adicionarFalta(al, falta);
-                                break;
-                            case 6: // exibir todos
-                                System.out.println("Alunos da turma A: ");
-                                turmaB.exibirTodos();
-                                break;
-                            case 7: // exibir dados de um único aluno
-                                System.out.println("Informe a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                al = new Aluno(matr);
-                                turmaB.exibirEspecifico(al);
-                                break;
-                            case 0:
-                                System.out.println("Programa Encerrado!");
-                                break;
-                            default:
-                                System.out.println("Opção inválida");
+                            case 1:
+
                         }
                     } while (val != 0);
                     break;
@@ -151,59 +100,8 @@ public class Menu {
                         val = in.nextInt();
                         in.nextLine();
                         switch (val) {
-                            case 1: // cadastro
-                                matrFantasia++;
-                                System.out.println("Informe o nome do novo aluno: ");
-                                nome = in.nextLine();
-                                matr = "" + matrFantasia;
-                                al = new Aluno(matr, nome);
-                                turmaC.inserir(al);
-                                System.out.println("Sua matrícula será: " + matrFantasia);
-                                break;
-                            case 2: // remover
-                                System.out.println("Informe a matrícula do aluno a ser removido: ");
-                                matrFantasia = in.nextInt();
-                                turmaC.remover(matrFantasia);
-                                break;
-                            case 3: // adicionar média
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa a nova média: ");
-                                media = in.nextDouble();
-                                al =  new Aluno(matr);
-                                turmaC.inserirMedia(al, media);
-                                break;
-                            case 4: // adicionar falta
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa quantas faltas serão adicionadas: ");
-                                falta = in.nextInt();
-                                al =  new Aluno(matr);
-                                turmaC.adicionarFalta(al, falta);
-                                break;
-                            case 5: // remover falta
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa quantas faltas serão adicionadas: ");
-                                falta = in.nextInt();
-                                al =  new Aluno(matr);
-                                turmaC.adicionarFalta(al, falta);
-                                break;
-                            case 6: // exibir todos
-                                System.out.println("Alunos da turma A: ");
-                                turmaC.exibirTodos();
-                                break;
-                            case 7: // exibir dados de um único aluno
-                                System.out.println("Informe a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                al = new Aluno(matr);
-                                turmaC.exibirEspecifico(al);
-                                break;
-                            case 0:
-                                System.out.println("Programa Encerrado!");
-                                break;
-                            default:
-                                System.out.println("Opção inválida");
+                            case 1:
+
                         }
                     } while (val != 0);
                     break;
@@ -213,59 +111,8 @@ public class Menu {
                         val = in.nextInt();
                         in.nextLine();
                         switch (val) {
-                            case 1: // cadastro
-                                matrFantasia++;
-                                System.out.println("Informe o nome do novo aluno: ");
-                                nome = in.nextLine();
-                                matr = "" + matrFantasia;
-                                al = new Aluno(matr, nome);
-                                turmaD.inserir(al);
-                                System.out.println("Sua matrícula será: " + matrFantasia);
-                                break;
-                            case 2: // remover
-                                System.out.println("Informe a matrícula do aluno a ser removido: ");
-                                matr = in.nextLine();
-                                turmaD.remover(matr);
-                                break;
-                            case 3: // adicionar média
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa a nova média: ");
-                                media = in.nextDouble();
-                                al =  new Aluno(matr);
-                                turmaD.inserirMedia(al, media);
-                                break;
-                            case 4: // adicionar falta
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa quantas faltas serão adicionadas: ");
-                                falta = in.nextInt();
-                                al =  new Aluno(matr);
-                                turmaD.adicionarFalta(al, falta);
-                                break;
-                            case 5: // remover falta
-                                System.out.println("Informa a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                System.out.println("Informa quantas faltas serão adicionadas: ");
-                                falta = in.nextInt();
-                                al =  new Aluno(matr);
-                                turmaD.adicionarFalta(al, falta);
-                                break;
-                            case 6: // exibir todos
-                                System.out.println("Alunos da turma A: ");
-                                turmaD.exibirTodos();
-                                break;
-                            case 7: // exibir dados de um único aluno
-                                System.out.println("Informe a matrícula do aluno: ");
-                                matr = in.nextLine();
-                                al = new Aluno(matr);
-                                turmaD.exibirEspecifico(al);
-                                break;
-                            case 0:
-                                System.out.println("Programa Encerrado!");
-                                break;
-                            default:
-                                System.out.println("Opção inválida");
+                            case 1:
+
                         }
                     } while (val != 0);
                     break;
@@ -290,13 +137,13 @@ public class Menu {
 
     public static void exibeMenuOpcoes() {
         System.out.println("Opções");
-        System.out.println("1 - cadastrar");
-        System.out.println("2 - remover");
-        System.out.println("3 - alterar média");
-        System.out.println("4 - adicionar faltas");
-        System.out.println("5 - remover faltas");
-        System.out.println("6 - exibir todos");
-        System.out.println("7 - exibir especifico");
+        System.out.println("1 - Cadastrar Aluno");
+        System.out.println("2 - Remover Aluno");
+        System.out.println("3 - Alterar média de um Aluno");
+        System.out.println("4 - Adicionar faltas de um Aluno");
+        System.out.println("5 - Remover faltas de um Aluno");
+        System.out.println("6 - Exibir Todos os Alunos");
+        System.out.println("7 - Exibir Aluno Especifico");
         System.out.println("0 - Encerrar programa");
         System.out.print("Digite a opção desejada: ");
     }
