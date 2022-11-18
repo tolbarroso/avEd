@@ -13,7 +13,7 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void inserirNoFinal(T valor) {
+    public void inserir(T valor) {
         LDENode<T> novo = new LDENode(valor);
         if (this.isEmpty() == true) {
             this.prim = novo;
@@ -31,58 +31,10 @@ public class LDECircular<T extends Comparable<T>> {
         }
     }
 
-    public void inserir(T valor) { // Insere um novo nó na lista
-        LDENode<T> novo = new LDENode(valor);
-        LDENode<T> aux, anterior;
-        if (this.isEmpty() == true) { // Lista vazia?
-            this.prim = novo;
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
-        } else if (valor.compareTo(this.prim.getInfo()) < 0) { // Insere antes do primeiro
-            novo.setProx(this.prim);
-            this.prim.setAnt(novo);
-            this.prim = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
-        } else if (valor.compareTo(this.prim.getInfo()) == 0) { // Verifica repetição
-            System.out.println("Valor Repetido. Inserção não efetuada.");
-        } else if (valor.compareTo(this.ult.getInfo()) > 0) { // Insere depois do último
-            this.ult.setProx(novo);
-            novo.setAnt(this.ult);
-            this.ult = novo;
-            this.qtd++;
-            this.prim.setAnt(this.ult);
-            this.ult.setProx(this.prim);
-        } else if (valor.compareTo(this.ult.getInfo()) == 0) { // Verifica repetição
-            System.out.println("Valor Repetido. Inserção não efetuada.");
-        } else { //  Insere no meio
-            aux = this.prim.getProx();
-            while (true) {
-                if (valor.compareTo(aux.getInfo()) == 0) { // Verifica repetição
-                    System.out.println("Valor repetido. Inserção não efetuada.");
-                    break;
-                } else if (valor.compareTo(aux.getInfo()) < 0) { // Insere no meio da lista
-                    anterior = aux.getAnt();
-                    anterior.setProx(novo);
-                    aux.setAnt(novo);
-                    novo.setProx(aux);
-                    novo.setAnt(anterior);
-                    this.qtd++;
-                    break;
-                } else {
-                    aux = aux.getProx();
-                }
-            }
-        }
-    }
-
     public void exibirTodos() {
         LDENode<T> aux;
         if (this.isEmpty() == true) {
-            System.out.println("lista de alunos está vazia!");
+            System.out.println("Lista de alunos está vazia!");
         } else {
             aux = this.prim;
             do {
