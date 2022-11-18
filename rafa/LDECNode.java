@@ -1,35 +1,35 @@
 package rafa;
 
-public class LDECNode<Aluno extends Comparable<Aluno>> {
-    private Aluno info;
-    private LDECNode<Aluno> ant;
-    private LDECNode<Aluno> prox;
+public class LDECNode<T extends Comparable<T>> {
+    private T info;
+    private LDECNode<T> ant;
+    private LDECNode<T> prox;
 
-    public LDECNode(Aluno valor) {
+    public LDECNode(T valor) {
         this.info = valor;
     }
 
-    public Aluno getInfo() {
+    public T getInfo() {
         return this.info;
     }
 
-    public void setInfo(Aluno valor) {
+    public void setInfo(T valor) {
         this.info = valor;
     }
 
-    public LDECNode<Aluno> getAnt() {
+    public LDECNode<T> getAnt() {
         return this.ant;
     }
 
-    public void setAnt(LDECNode<Aluno> novoAnt) {
+    public void setAnt(LDECNode<T> novoAnt) {
         this.ant = novoAnt;
     }
 
-    public LDECNode<Aluno> getProx() {
+    public LDECNode<T> getProx() {
         return this.prox;
     }
 
-    public void setProx(LDECNode<Aluno> novoProx) {
+    public void setProx(LDECNode<T> novoProx) {
         this.prox = novoProx;
     }
 }
