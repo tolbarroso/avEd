@@ -51,19 +51,22 @@ public class Aplicacao {
                         matricula = in.nextLine();
                         System.out.print("insira a nova média: ");
                         media = in.nextDouble();
-                        lista1.alterarMedia(matricula, media);
+                        aluno = new Aluno(matricula);
+                        lista1.alterarMedia(aluno, media);
                     } else if (op2 == 4) { // adição de falta
                         System.out.print("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
                         System.out.print("insira a quantidade de faltas a serem adicionadas: ");
                         faltas = in.nextInt();
-                        lista1.adicionarFalta(matricula, faltas);
+                        aluno = new Aluno(matricula);
+                        lista1.adicionarFalta(aluno, faltas);
                     } else if (op2 == 5) { // remoção de falta
                         System.out.print("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
                         System.out.print("insira a quantidade de faltas a serem removidas: ");
                         faltas = in.nextInt();
-                        lista1.removerFalta(matricula, faltas);
+                        aluno = new Aluno(matricula);
+                        lista1.removerFalta(aluno, faltas);
                     } else if (op2 == 6) { // exibição de todos
                         System.out.println("alunos: ");
                         lista1.exibirTodos();
@@ -71,7 +74,7 @@ public class Aplicacao {
                         System.out.print("insira a matrícula do aluno: ");
                         matricula = in.nextLine();
                         aluno = new Aluno(matricula);
-                        lista1.exibirEspecifico(matricula);
+                        lista1.exibirEspecifico(aluno);
                     } else if (op2 == 0) {
                         cont2 = 20;
                         System.out.println("programa encerrado");
