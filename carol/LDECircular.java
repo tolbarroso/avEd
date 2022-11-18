@@ -86,7 +86,7 @@ public class LDECircular<T extends Comparable<T>> {
         } else {
             aux = this.prim;
             do {
-                System.out.print(aux.getInfo() + " ");
+                System.out.println(aux.getInfo());
                 aux = aux.getProx();
             } while (aux != this.prim);
         }
