@@ -14,10 +14,11 @@ public class LDECircular<ALuno extends Comparable<Aluno>> {
     }
 
     public void exibirTodos() { // ver todos os nós
-        LDECNode<Aluno> aux = this.prim;
+        LDECNode<Aluno> aux;
         if (this.isEmpty() == true) {
             System.out.println("Lista Vazia!");
         } else {
+            aux = this.prim;
             do {
                 System.out.print(aux.getInfo() + " ");
                 aux = aux.getProx();
@@ -39,6 +40,9 @@ public class LDECircular<ALuno extends Comparable<Aluno>> {
         LDECNode<Aluno> aux = this.prim;
         if (this.isEmpty() == true) {
             return null;
+        }
+        if (al.compareTo(this.ult.getInfo()) == 0) {
+            return this.ult;
         }
         for (int i = 0; i < this.qtd; i++) {
             if (al.compareTo(aux.getInfo()) == 0) {
