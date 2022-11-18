@@ -29,243 +29,59 @@ public class MenuIf {
                     in.nextLine();
                     if (val == 1) { // cadastro
                         matrFantasia++;
-                        System.out.println("Informe o nome do novo aluno: ");
+                        System.out.println("informe o nome do novo aluno: ");
                         nome = in.nextLine();
                         matr = "" + matrFantasia;
                         al = new Aluno(matr, nome);
-                        turmaA.inserir(al);
                         System.out.println("Sua matrícula será: " + matrFantasia);
-                        break;
+                        lista1.inserir(al);
                     } else if (val == 2) { // remover
-                        System.out.println("Informe a matrícula do aluno a ser removido: ");
+                        System.out.println("informe a matrícula do aluno a ser removido: ");
                         matr = in.nextLine();
-                        turmaA.remover(matr);
-                        break;
-                    } else if (val == 3) { // adicionar média
-                        System.out.println("Informa a matrícula do aluno: ");
+                        al = new Aluno(matr);
+                        lista1.remover(matr);
+                    } else if (val == 3) { // alteração da média
+                        System.out.println("informa a matrícula do aluno: ");
                         matr = in.nextLine();
-                        System.out.println("Informa a nova média: ");
+                        System.out.println("informa a nova média: ");
                         media = in.nextDouble();
                         al = new Aluno(matr);
-                        turmaA.inserirMedia(al, media);
-                        break;
-                    } else if (val == 4) { // adicionar falta
-                        System.out.println("Informa a matrícula do aluno: ");
+                        lista1.inserirMedia(al, media);
+                    } else if (val == 4) { // adição de falta
+                        System.out.println("informa a matrícula do aluno: ");
                         matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
+                        System.out.println("informa quantas faltas serão adicionadas: ");
                         falta = in.nextInt();
                         al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 5) { // remover falta
-                        System.out.println("Informa a matrícula do aluno: ");
+                        lista1.adicionarFalta(al, falta);
+                    } else if (val == 5) { // remoção de falta
+                        System.out.println("informa a matrícula do aluno: ");
                         matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
+                        System.out.println("informa quantas faltas serão adicionadas: ");
                         falta = in.nextInt();
                         al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 6) { // exibir todos
-                        System.out.println("Alunos da turma A: ");
-                        turmaA.exibirTodos();
-                        break;
-                    } else if (val == 7) { // exibir dados de um único aluno
-                        System.out.println("Informe a matrícula do aluno: ");
+                        lista1.adicionarFalta(al, falta);
+                    } else if (val == 6) { // exibição de todos
+                        System.out.println("alunos da Turma A: ");
+                        lista1.exibirTodos();
+                    } else if (val == 7) { // exibição de um
+                        System.out.print("insira a matrícula do aluno: ");
                         matr = in.nextLine();
                         al = new Aluno(matr);
-                        turmaA.exibirEspecifico(al);
-                        break;
+                        lista1.exibirEspecifico(al);
                     } else if (val == 0) {
-                        System.out.println("Programa Encerrado!");
-                        break;
+                        System.out.println("programa encerrado");
                     } else {
-                        System.out.println("Opção inválida");
+                        System.out.println("opção invalida");
                     }
                 } while (val != 0);
                 break;
             } else if (op == 2) { // lista 2
-                do {
-                    exibeMenuOpcoes();
-                    val = in.nextInt();
-                    in.nextLine();
-                    if (val == 1) { // cadastro
-                        matrFantasia++;
-                        System.out.println("Informe o nome do novo aluno: ");
-                        nome = in.nextLine();
-                        matr = "" + matrFantasia;
-                        al = new Aluno(matr, nome);
-                        turmaA.inserir(al);
-                        System.out.println("Sua matrícula será: " + matrFantasia);
-                        break;
-                    } else if (val == 2) { // remover
-                        System.out.println("Informe a matrícula do aluno a ser removido: ");
-                        matr = in.nextLine();
-                        turmaA.remover(matr);
-                        break;
-                    } else if (val == 3) { // adicionar média
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa a nova média: ");
-                        media = in.nextDouble();
-                        al = new Aluno(matr);
-                        turmaA.inserirMedia(al, media);
-                        break;
-                    } else if (val == 4) { // adicionar falta
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
-                        falta = in.nextInt();
-                        al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 5) { // remover falta
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
-                        falta = in.nextInt();
-                        al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 6) { // exibir todos
-                        System.out.println("Alunos da turma A: ");
-                        turmaA.exibirTodos();
-                        break;
-                    } else if (val == 7) { // exibir dados de um único aluno
-                        System.out.println("Informe a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        al = new Aluno(matr);
-                        turmaA.exibirEspecifico(al);
-                        break;
-                    } else if (val == 0) {
-                        System.out.println("Programa Encerrado!");
-                        break;
-                    } else {
-                        System.out.println("Opção inválida");
-                    }
-                } while (val != 0);
-                break;
+                
             } else if (op == 3) { // lista 3
-                do {
-                    exibeMenuOpcoes();
-                    val = in.nextInt();
-                    in.nextLine();
-                    if (val == 1) { // cadastro
-                        matrFantasia++;
-                        System.out.println("Informe o nome do novo aluno: ");
-                        nome = in.nextLine();
-                        matr = "" + matrFantasia;
-                        al = new Aluno(matr, nome);
-                        turmaA.inserir(al);
-                        System.out.println("Sua matrícula será: " + matrFantasia);
-                        break;
-                    } else if (val == 2) { // remover
-                        System.out.println("Informe a matrícula do aluno a ser removido: ");
-                        matr = in.nextLine();
-                        turmaA.remover(matr);
-                        break;
-                    } else if (val == 3) { // adicionar média
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa a nova média: ");
-                        media = in.nextDouble();
-                        al = new Aluno(matr);
-                        turmaA.inserirMedia(al, media);
-                        break;
-                    } else if (val == 4) { // adicionar falta
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
-                        falta = in.nextInt();
-                        al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 5) { // remover falta
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
-                        falta = in.nextInt();
-                        al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 6) { // exibir todos
-                        System.out.println("Alunos da turma A: ");
-                        turmaA.exibirTodos();
-                        break;
-                    } else if (val == 7) { // exibir dados de um único aluno
-                        System.out.println("Informe a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        al = new Aluno(matr);
-                        turmaA.exibirEspecifico(al);
-                        break;
-                    } else if (val == 0) {
-                        System.out.println("Programa Encerrado!");
-                        break;
-                    } else {
-                        System.out.println("Opção inválida");
-                    }
-                } while (val != 0);
-                break;
+                
             } else if (op == 4) { // lista 4
-                do {
-                    exibeMenuOpcoes();
-                    val = in.nextInt();
-                    in.nextLine();
-                    if (val == 1) { // cadastro
-                        matrFantasia++;
-                        System.out.println("Informe o nome do novo aluno: ");
-                        nome = in.nextLine();
-                        matr = "" + matrFantasia;
-                        al = new Aluno(matr, nome);
-                        turmaA.inserir(al);
-                        System.out.println("Sua matrícula será: " + matrFantasia);
-                        break;
-                    } else if (val == 2) { // remover
-                        System.out.println("Informe a matrícula do aluno a ser removido: ");
-                        matr = in.nextLine();
-                        turmaA.remover(matr);
-                        break;
-                    } else if (val == 3) { // adicionar média
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa a nova média: ");
-                        media = in.nextDouble();
-                        al = new Aluno(matr);
-                        turmaA.inserirMedia(al, media);
-                        break;
-                    } else if (val == 4) { // adicionar falta
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
-                        falta = in.nextInt();
-                        al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 5) { // remover falta
-                        System.out.println("Informa a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        System.out.println("Informa quantas faltas serão adicionadas: ");
-                        falta = in.nextInt();
-                        al = new Aluno(matr);
-                        turmaA.adicionarFalta(al, falta);
-                        break;
-                    } else if (val == 6) { // exibir todos
-                        System.out.println("Alunos da turma A: ");
-                        turmaA.exibirTodos();
-                        break;
-                    } else if (val == 7) { // exibir dados de um único aluno
-                        System.out.println("Informe a matrícula do aluno: ");
-                        matr = in.nextLine();
-                        al = new Aluno(matr);
-                        turmaA.exibirEspecifico(al);
-                        break;
-                    } else if (val == 0) {
-                        System.out.println("Programa Encerrado!");
-                        break;
-                    } else {
-                        System.out.println("Opção inválida");
-                    }
-                } while (val != 0);
-                break;
+                
             } else if (op == 0) {
                 System.out.println("Programa Encerrado!");
                 break;
