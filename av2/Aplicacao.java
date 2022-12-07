@@ -8,7 +8,7 @@ public class Aplicacao {
         CadastroProdutos produtos = new CadastroProdutos();
         int op;
         do {
-            exibirOpcoes();
+            exibirMenu();
             op = in.nextInt();
 
             if (op == 1) {
@@ -31,7 +31,7 @@ public class Aplicacao {
         } while (op != 0);
     }
 
-    public static void exibirOpcoes() {
+    public static void exibirMenu() {
         System.out.println(" ");
         System.out.println("1 - cadastro de produto");
         System.out.println("2 - exibir info de todos");
